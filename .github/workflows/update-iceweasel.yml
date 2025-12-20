@@ -1,43 +1,76 @@
-name: 🔄 Update Iceweasel Version
+name: 🔄 Weekly Iceweasel Version Update
 
 on:
   schedule:
-    - cron: '0 2 * * 1'  # 每周一 02:00 UTC
-  workflow_dispatch:
+    - cron: '0 2 * * 1'  # Every Monday at 02:00 UTC
+  workflow_dispatch:      # Allow manual trigger
 
 permissions:
-  contents: write
+  contents: write         # Required to push changes
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 🛎️ Checkout repository
+        uses: actions/checkout@v4
 
-      - name: 🔍 Get latest GitHub release tag
+      - name: 🔍 Get latest Iceweasel release tag
         id: get_tag
         run: |
-          url=$(curl -fsSL -o /dev/null -w '%{url_effective}' -L "https://github.com/adonais/iceweasel/releases/latest")
-          tag=$(echo "$url" | grep -oP '/tag/\K[^/?#]+')
+          # Get the effective URL after redirect from /releases/latest
+          latest_url=$(curl -fsSL -o /dev/null -w '%{url_effective}' -L "https://github.com/adonais/iceweasel/releases/latest")
+          # Extract tag (e.g., v147.0.0)
+          tag=$(echo "$latest_url" | grep -oP '/tag/\K[^/?#]+')
+          if [[ -z "$tag" ]]; then
+            echo "ERROR: Failed to extract tag from URL: $latest_url"
+            exit 1
+          fi
+          echo "Latest tag: $tag"
           echo "tag=$tag" >> $GITHUB_OUTPUT
 
-      - name: 📄 Read current version
-        id: current
+      - name: 📄 Read current version from manifest
+        id: read_current
         run: |
-          ver=$(jq -r '.version' bucket/iceweasel.json)
-          echo "current=$ver" >> $GITHUB_OUTPUT
+          file="bucket/iceweasel.json"
+          if [[ ! -f "$file" ]]; then
+            echo "ERROR: Manifest not found: $file"
+            exit 1
+          fi
+          current=$(jq -r '.version' "$file")
+          if [[ -z "$current" ]]; then
+            echo "ERROR: Failed to read 'version' from manifest"
+            exit 1
+          fi
+          echo "Current version: $current"
+          echo "current=$current" >> $GITHUB_OUTPUT
 
-      - name: 🔄 Update version if changed
-        if: steps.get_tag.outputs.tag != steps.current.outputs.current
+      - name: 🔄 Replace all occurrences of old version with new version
+        id: replace
+        if: steps.get_tag.outputs.tag != steps.read_current.outputs.current
         run: |
-          jq --arg v "${{ steps.get_tag.outputs.tag }}" '.version = $v' bucket/iceweasel.json > tmp.json
-          mv tmp.json bucket/iceweasel.json
+          file="bucket/iceweasel.json"
+          old="${{ steps.read_current.outputs.current }}"
+          new="${{ steps.get_tag.outputs.tag }}"
+          echo "Replacing all occurrences of '$old' with '$new' in $file"
 
-      - name: 💾 Commit and push
-        if: steps.get_tag.outputs.tag != steps.current.outputs.current
+          # Use sed to replace literal string (escape special regex chars)
+          escaped_old=$(printf '%s\n' "$old" | sed 's/[[\.*^$()+?{|]/\\&/g')
+          sed -i "s/$escaped_old/$new/g" "$file"
+
+          # Ensure file ends with newline (required by Scoop tests)
+          if [[ -n $(tail -c1 "$file" | od -An -tx1) ]]; then
+            echo >> "$file"
+          fi
+
+          echo "updated=true" >> $GITHUB_OUTPUT
+
+      - name: 💾 Commit and push if updated
+        if: steps.replace.outputs.updated == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add bucket/iceweasel.json
-          git commit -m "chore: update Iceweasel to ${{ steps.get_tag.outputs.tag }}"
+          git commit -m "chore(iceweasel): update to ${{ steps.get_tag.outputs.tag }}"
           git push
+          echo "✅ Successfully updated and pushed new version!"
