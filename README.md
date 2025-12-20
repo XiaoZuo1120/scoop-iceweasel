@@ -36,6 +36,13 @@ Iceweasel 是一款独立的网页浏览器，源自 Firefox/Mozilla 社区代�
 
 ## 🔧 安装方法
 
+You can install Iceweasel using either the GitHub repository (global network) or Gitee mirror (optimized for China mainland users):
+
+您可以使用 GitHub 仓库（全球网络）或 Gitee 镜像（为中国大陆用户优化）安装 Iceweasel：
+
+### Option 1: GitHub Repository (Global)
+### 选项 1: GitHub 仓库（全球）
+
 ```powershell
 # Add this bucket
 scoop bucket add iceweasel https://github.com/xiaozuo1120/scoop-iceweasel
@@ -51,6 +58,44 @@ scoop bucket add iceweasel https://github.com/xiaozuo1120/scoop-iceweasel
 # 安装 Iceweasel
 scoop install iceweasel
 ```
+
+### Option 2: Gitee Mirror (China Mainland)
+### 选项 2: Gitee 镜像（中国大陆）
+
+```powershell
+# Add Gitee mirror bucket
+scoop bucket add iceweasel https://gitee.com/XZ1120/scoop-iceweasel
+
+# Install Iceweasel
+scoop install iceweasel
+```
+
+```powershell
+# 添加 Gitee 镜像源
+scoop bucket add iceweasel https://gitee.com/XZ1120/scoop-iceweasel
+
+# 安装 Iceweasel
+scoop install iceweasel
+```
+
+## 🌐 Gitee Mirror for China Mainland Users
+
+## 🌐 为中国大陆用户提供的 Gitee 镜像
+
+To improve access speed for users in mainland China, this repository is mirrored on Gitee:
+
+为了提高中国大陆用户的访问速度，此仓库在 Gitee 上提供了镜像：
+
+- **Mirror URL**: https://gitee.com/XZ1120/scoop-iceweasel
+- **镜像地址**: https://gitee.com/XZ1120/scoop-iceweasel
+- **Synchronization**: Updated automatically after GitHub changes
+- **同步机制**: GitHub 更新后自动同步
+- **Full Parity**: Complete feature parity with the GitHub repository
+- **完全一致**: 与 GitHub 仓库功能完全一致
+
+The Gitee mirror provides the same functionality but with faster download speeds for users in China mainland. All manifests and update mechanisms work identically.
+
+Gitee 镜像提供相同的功能，但为中国大陆用户提供更快的下载速度。所有清单文件和更新机制工作方式完全相同。
 
 ## 🔄 Auto-update System
 
