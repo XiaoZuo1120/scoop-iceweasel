@@ -2,7 +2,7 @@
 
 # Iceweasel Scoop 源
 
-> ⚠️ **No hash verification** — trust the upstream publisher.  
+> ⚠️ **No hash verification** — trust the upstream publisher.
 > ⚠️ **无哈希验证** — 请信任上游发布者。
 
 [![Weekly Version Update](https://github.com/xiaozuo1120/scoop-iceweasel/actions/workflows/update-iceweasel.yml/badge.svg)](https://github.com/xiaozuo1120/scoop-iceweasel/actions)
@@ -19,17 +19,17 @@ Iceweasel is an independent web browser derived from Firefox/Mozilla community c
 
 Iceweasel 是一款独立的网页浏览器，源自 Firefox/Mozilla 社区代码。它保持了熟悉的 Firefox 布局，同时提供了显著的改进：
 
-- **Enhanced Privacy**: Disables telemetry, crash reporting, and privacy-related tracking by default  
+- **Enhanced Privacy**: Disables telemetry, crash reporting, and privacy-related tracking by default
 - **增强隐私保护**：默认禁用遥测、崩溃报告和隐私相关追踪
-- **Performance Optimized**: SSE3 optimizations with merged patches for better speed  
+- **Performance Optimized**: SSE3 optimizations with merged patches for better speed
 - **性能优化**：SSE3 优化和合并补丁，提供更佳速度
-- **Extension Freedom**: Allows installation of unsigned extensions  
+- **Extension Freedom**: Allows installation of unsigned extensions
 - **扩展自由**：允许安装未经签名的扩展
-- **Lightweight**: Removes less-used modules for faster startup and reduced resource usage  
+- **Lightweight**: Removes less-used modules for faster startup and reduced resource usage
 - **轻量级**：移除不常用模块，加快启动速度并减少资源占用
-- **Portable Mode**: Full support for running from USB drives or any location without system modifications  
+- **Portable Mode**: Full support for running from USB drives or any location without system modifications
 - **便携模式**：完全支持从 USB 驱动器或任意位置运行，无需系统修改
-- **Automatic Updates**: Built-in update mechanism keeps your browser current  
+- **Automatic Updates**: Built-in update mechanism keeps your browser current
 - **自动更新**：内置更新机制保持浏览器最新
 
 ## 🔧 Installation
@@ -74,11 +74,11 @@ Your browser data is preserved across updates in these directories:
 
 您的浏览器数据在以下目录中跨版本更新保持不变：
 
-- `profile/` – Your browser profile with bookmarks, history, and settings  
+- `profile/` – Your browser profile with bookmarks, history, and settings
 - `profile/` – 包含书签、历史记录和设置的浏览器配置文件
-- `distribution/` – Custom distribution preferences and policies  
+- `distribution/` – Custom distribution preferences and policies
 - `distribution/` – 自定义分发首选项和策略
-- `addition/` – Place custom files here (extensions, themes, configuration files) to be automatically copied during installation and updates  
+- `addition/` – Place custom files here (extensions, themes, configuration files) to be automatically copied during installation and updates
 - `addition/` – 在此处放置自定义文件（扩展、主题、配置文件），在安装和更新时会自动复制
 
 ## 🛠️ Profile Management
@@ -105,13 +105,13 @@ Iceweasel Profile Manager
 # 访问: about:profiles
 ```
 
-**Profile Setup Tips**:  
+**Profile Setup Tips**:
 **配置文件设置技巧**：
-- Always select the 'Scoop' profile in the Profile Manager  
+- Always select the 'Scoop' profile in the Profile Manager
 - 在配置文件管理器中始终选择 'Scoop' 配置文件
-- Click "Start Iceweasel" to make it the default  
+- Click "Start Iceweasel" to make it the default
 - 点击"启动 Iceweasel"将其设为默认
-- If settings are lost after updates, repeat the profile setup process  
+- If settings are lost after updates, repeat the profile setup process
 - 如果更新后设置丢失，请重复配置文件设置过程
 
 ## ⚙️ Customization
@@ -142,17 +142,17 @@ Iceweasel 通过 `portable.ini` 支持便携式配置 – 有关高级设置选�
 
 ## 🚀 为什么使用 Scoop 安装 Iceweasel？
 
-- **No Admin Rights Required**: Install and run without administrator privileges  
+- **No Admin Rights Required**: Install and run without administrator privileges
 - **无需管理员权限**：无需管理员权限即可安装和运行
-- **Clean Uninstallation**: Complete removal with no leftover files or registry entries  
+- **Clean Uninstallation**: Complete removal with no leftover files or registry entries
 - **干净卸载**：完全移除，无残留文件或注册表项
-- **Path Management**: Automatic PATH configuration without pollution  
+- **Path Management**: Automatic PATH configuration without pollution
 - **路径管理**：自动 PATH 配置，不会污染系统环境
-- **Version Control**: Easily switch between versions if needed  
+- **Version Control**: Easily switch between versions if needed
 - **版本控制**：如需，可轻松在不同版本间切换
-- **Isolated Environment**: All files contained within your Scoop directory  
+- **Isolated Environment**: All files contained within your Scoop directory
 - **隔离环境**：所有文件都包含在 Scoop 目录内
-- **Update Simplicity**: One command to check and install updates (`scoop update iceweasel`)  
+- **Update Simplicity**: One command to check and install updates (`scoop update iceweasel`)
 - **更新简便**：一条命令即可检查并安装更新（`scoop update iceweasel`）
 
 ## 📜 License
@@ -167,17 +167,17 @@ This Scoop bucket is not affiliated with the Iceweasel project. Iceweasel is lic
 
 ## 🤝 支持
 
-For issues with the Scoop package:  
+For issues with the Scoop package:
 有关 Scoop 软件包的问题：
-- [Open an issue](https://github.com/xiaozuo1120/scoop-iceweasel/issues) in this repository  
+- [Open an issue](https://github.com/xiaozuo1120/scoop-iceweasel/issues) in this repository
 - 在[此仓库提交问题](https://github.com/xiaozuo1120/scoop-iceweasel/issues)
 
-For issues with Iceweasel itself:  
+For issues with Iceweasel itself:
 有关 Iceweasel 本身的问题：
-- [Report to Iceweasel developers](https://github.com/adonais/iceweasel/issues)  
+- [Report to Iceweasel developers](https://github.com/adonais/iceweasel/issues)
 - [向 Iceweasel 开发者报告](https://github.com/adonais/iceweasel/issues)
 
 ---
 
-> **Note**: Since hash verification is disabled, you're trusting the upstream publisher when installing updates. Only proceed if you understand and accept this security model.  
+> **Note**: Since hash verification is disabled, you're trusting the upstream publisher when installing updates. Only proceed if you understand and accept this security model.
 > **注意**：由于哈希验证已禁用，安装更新时您需要信任上游发布者。仅在您理解并接受此安全模型时继续操作。
