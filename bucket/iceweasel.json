@@ -1,5 +1,5 @@
 {
-  "version": "v146.0.1",
+  "version": "v146.0",
   "description": "Iceweasel web browser, an independent browser derived from Firefox/Mozilla community code. The source tree is mostly laid out like Mozilla-based products.",
   "homepage": "https://github.com/adonais/iceweasel",
   "license": "MPL-2.0",
