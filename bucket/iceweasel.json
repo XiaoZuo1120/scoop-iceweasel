@@ -1,5 +1,5 @@
 {
-  "version": "v147.0.1",
+  "version": "v147.0.2",
   "description": "Iceweasel web browser, an independent browser derived from Firefox/Mozilla community code. The source tree is mostly laid out like Mozilla-based products.",
   "homepage": "https://github.com/adonais/iceweasel",
   "license": "MPL-2.0",
@@ -11,7 +11,7 @@
   ],
   "architecture": {
     "64bit": {
-      "url": "https://github.com/adonais/iceweasel/releases/download/v147.0.1/Iceweasel-v147.0.1.l10n_win64_pgo.7z"
+      "url": "https://github.com/adonais/iceweasel/releases/download/v147.0.2/Iceweasel-v147.0.2.l10n_win64_pgo.7z"
     }
   },
   "extract_dir": "Iceweasel_x64/App",
@@ -50,6 +50,7 @@
     }
   }
 }
+
 
 
 
