@@ -5,7 +5,7 @@
 > ⚠️ **No hash verification** — trust the upstream publisher.
 > ⚠️ **无哈希验证** — 请信任上游发布者。
 
-[![Weekly Version Update](https://github.com/xiaozuo1120/scoop-iceweasel/actions/workflows/update-iceweasel.yml/badge.svg)](https://github.com/xiaozuo1120/scoop-iceweasel/actions)
+[![Daily Version Update](https://github.com/xiaozuo1120/scoop-iceweasel/actions/workflows/update-iceweasel.yml/badge.svg)](https://github.com/xiaozuo1120/scoop-iceweasel/actions)
 
 Install [Iceweasel](https://github.com/adonais/iceweasel) via [Scoop](https://scoop.sh) — a privacy-focused, Firefox-derived web browser with enhanced customization and portable capabilities.
 
